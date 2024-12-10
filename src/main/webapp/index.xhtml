@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+
+        <div class="main">
+            <div class="form-container">
+                <h2>Data Container</h2>
+                <h:form>
+
+                    <h:dataTable value="#{itemController.data}" var="item">
+                        <h:column>
+                            <f:facet name="header">Item</f:facet>
+                            #{item}
+                        </h:column>
+                        <h:column>t>
+                            <h:commandButton value="Delete" action="#{itemController.removeItem(item)}"/>
+                        </h:column>
+                    </h:dataTable>
+
+                    <h:inputText  id="newItem" value="#{itemController.newItem}" />
+                    <h:commandButton value="Add" action="#{itemController.addItem}"/>
+
+                </h:form>
+            </div>
+        </div>
+
+</html>
